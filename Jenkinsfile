@@ -32,7 +32,7 @@ pipeline {
                 script {
                     echo 'Deploying containers...'
                     sh '''
-                    docker-compose -f ${DOCKER_COMPOSE_FILE} up -d
+                    docker compose up
                     '''
                 }
             }
