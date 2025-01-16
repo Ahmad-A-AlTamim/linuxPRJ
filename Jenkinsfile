@@ -16,12 +16,23 @@ pipeline {
             }
         }
         
+        stage('Stop Containers') {
+            steps {
+                script {
+                    echo 'Stopping any running containers...'
+                    sh '''
+                    docker compose down || true
+                    '''
+                }
+            }
+        }
+
         stage('Build Docker Images') {
             steps {
                 script {
                     echo 'Building Docker images...'
                     sh '''
-                    docker-compose -f ${DOCKER_COMPOSE_FILE} build
+                    docker compose -f ${DOCKER_COMPOSE_FILE} build
                     '''
                 }
             }
@@ -32,7 +43,7 @@ pipeline {
                 script {
                     echo 'Deploying containers...'
                     sh '''
-                    docker compose up
+                    docker compose up -d
                     '''
                 }
             }
