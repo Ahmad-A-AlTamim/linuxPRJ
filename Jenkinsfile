@@ -16,7 +16,27 @@ pipeline {
             }
         }
         
-
+        stage('Build Docker Images') {
+            steps {
+                script {
+                    echo 'Building Docker images...'
+                    sh '''
+                    docker-compose -f ${DOCKER_COMPOSE_FILE} build
+                    '''
+                }
+            }
+        }
+        
+        stage('Deploy Containers') {
+            steps {
+                script {
+                    echo 'Deploying containers...'
+                    sh '''
+                    docker-compose -f ${DOCKER_COMPOSE_FILE} up -d
+                    '''
+                }
+            }
+        }
     }
     
     post {
