@@ -19,13 +19,13 @@
         <div id="result" class="mt-4"></div>
     </div>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $("#dictionary-form").on("submit", function (e) {
             e.preventDefault();
 
             const inputWord = $("#input-word").val();
-            $.post("dictionary.php", { input_word: inputWord }, function (response) {
+            $.post("connect.php", { input_word: inputWord }, function (response) {
                 const data = JSON.parse(response);
                 if (data.success) {
                     $("#result").html(`<div class="alert alert-success">Matched Word: ${data.matched_word}</div>`);
@@ -34,6 +34,6 @@
                 }
             });
         });
-    </script> -->
+    </script>
 </body>
 </html>
