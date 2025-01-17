@@ -26,7 +26,7 @@
 <?php
  $name = $_POST['name'];
  if($name.length > 0){
-    $query = "SELECT * FROM mydb.dect WHERE word = '$name'";
+    $query = "SELECT * FROM mydb.dect ";
     $result = mysqli_query($conn, $query);
     if ($result->num_rows > 0) {
         while ($row = mysqli_fetch_array($result)) {
