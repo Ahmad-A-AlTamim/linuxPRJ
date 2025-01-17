@@ -3,7 +3,7 @@
     $username = "root";
     $password = "123";
     $conn = mysqli_connect($servername, $username, $password);
-    echo "<h1>Fuck Baker KOS OM BAKER</h1>";
+    echo "<h1>Hello</h1>";
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
         echo "Connection failed";
