@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <h1 class="text-center mt-5">Simple Dictionary Application</h1>
+    
     <div class="container mt-5">
         <h1 class="text-center">Simple Dictionary Application</h1>
         <form id="dictionary-form" class="mt-4">
