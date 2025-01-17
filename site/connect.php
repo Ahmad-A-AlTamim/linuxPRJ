@@ -2,18 +2,16 @@
 $servername = "db";
 $username = "root";
 $password = "123";
-$dbname = "mydb";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password);
 
-// Check connection
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $input_word = $conn->real_escape_string($_POST['input_word']);
-    $sql = "SELECT machine_word AS matched_word FROM words WHERE input_word = '$input_word'";
+    $sql = "SELECT matched_word FROM mydb.words WHERE input_word = '$input_word'";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {

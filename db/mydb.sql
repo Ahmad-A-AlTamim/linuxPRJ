@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jan 17, 2025 at 08:25 AM
+-- Generation Time: Jan 17, 2025 at 01:01 PM
 -- Server version: 9.1.0
 -- PHP Version: 8.2.27
 
@@ -27,26 +27,29 @@ SET time_zone = "+00:00";
 -- Table structure for table `dect`
 --
 
-CREATE TABLE `dect` (
-  `word` varchar(255) NOT NULL
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `words`
+--
+
+CREATE TABLE `words` (
+  `id` int NOT NULL,
+  `input_word` varchar(255) NOT NULL,
+  `matched_word` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data for table `dect`
+-- Dumping data for table `words`
 --
 
-INSERT INTO `dect` (`word`) VALUES
-(''),
-('abood'),
-('abu zyiad'),
-('ahmad'),
-('ali'),
-('enter your name'),
-('mohammed'),
-('rami'),
-('ss'),
-('tamim'),
-('xxx');
+INSERT INTO `words` (`id`, `input_word`, `matched_word`) VALUES
+(1, 'apple', 'fruit'),
+(2, 'car', 'vehicle'),
+(3, 'book', 'literature'),
+(4, 'phone', 'device'),
+(5, 'sun', 'star');
 
 --
 -- Indexes for dumped tables
@@ -55,8 +58,21 @@ INSERT INTO `dect` (`word`) VALUES
 --
 -- Indexes for table `dect`
 --
-ALTER TABLE `dect`
-  ADD PRIMARY KEY (`word`);
+
+-- Indexes for table `words`
+--
+ALTER TABLE `words`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `words`
+--
+ALTER TABLE `words`
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
